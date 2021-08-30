@@ -86,7 +86,8 @@ class FlutterCallkeep extends EventManager {
   Future<void> displayIncomingCall(String uuid, String handle,
       {String localizedCallerName = '',
       String handleType = 'number',
-      bool hasVideo = false}) async {
+      bool hasVideo = false,
+      Map<String, dynamic>? payload}) async {
     if (!isIOS) {
       await _channel.invokeMethod<void>(
           'displayIncomingCall', <String, dynamic>{
@@ -101,7 +102,8 @@ class FlutterCallkeep extends EventManager {
       'handle': handle,
       'handleType': handleType,
       'hasVideo': hasVideo,
-      'localizedCallerName': localizedCallerName
+      'localizedCallerName': localizedCallerName,
+      'payload': payload
     });
   }
 
