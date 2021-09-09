@@ -562,8 +562,9 @@ contactIdentifier:(NSString * _Nullable)contactIdentifier
                      hasVideo:(BOOL)hasVideo
           localizedCallerName:(NSString * _Nullable)localizedCallerName
                   fromPushKit:(BOOL)fromPushKit
+                     payload:(NSDictionary *)payload
 {
-    [CallKeep reportNewIncomingCall: uuidString handle:handle handleType:handleType hasVideo:hasVideo localizedCallerName:localizedCallerName fromPushKit: fromPushKit payload:nil withCompletionHandler:nil];
+    [CallKeep reportNewIncomingCall: uuidString handle:handle handleType:handleType hasVideo:hasVideo localizedCallerName:localizedCallerName fromPushKit: fromPushKit payload:payload withCompletionHandler:nil];
 }
 
 - (BOOL)lessThanIos10_2
