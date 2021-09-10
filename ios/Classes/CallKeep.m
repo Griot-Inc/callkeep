@@ -299,8 +299,9 @@ static CXProvider* sharedProvider;
                  handleType:(NSString *)handleType
                    hasVideo:(BOOL)hasVideo
         localizedCallerName:(NSString * _Nullable)localizedCallerName
+                    payload:(NSDictionary *)payload
 {
-    [CallKeep reportNewIncomingCall: uuidString handle:handle handleType:handleType hasVideo:hasVideo localizedCallerName:localizedCallerName fromPushKit: NO payload:nil withCompletionHandler:nil];
+    [CallKeep reportNewIncomingCall: uuidString handle:handle handleType:handleType hasVideo:hasVideo localizedCallerName:localizedCallerName fromPushKit: NO payload:payload withCompletionHandler:nil];
 }
 
 -(void) startCall:(NSString *)uuidString
@@ -541,7 +542,7 @@ contactIdentifier:(NSString * _Nullable)contactIdentifier
             @"localizedCallerName": localizedCallerName ? localizedCallerName : @"",
             @"hasVideo": @(hasVideo),
             @"fromPushKit": @(fromPushKit),
-            @"payload": payload ? payload : @"",
+            @"payload": payload,
         }];
         if (error == nil) {
             // Workaround per https://forums.developer.apple.com/message/169511
@@ -560,8 +561,8 @@ contactIdentifier:(NSString * _Nullable)contactIdentifier
                    handleType:(NSString *)handleType
                      hasVideo:(BOOL)hasVideo
           localizedCallerName:(NSString * _Nullable)localizedCallerName
+                      payload:(NSDictionary *)payload
                   fromPushKit:(BOOL)fromPushKit
-                     payload:(NSDictionary *)payload
 {
     [CallKeep reportNewIncomingCall: uuidString handle:handle handleType:handleType hasVideo:hasVideo localizedCallerName:localizedCallerName fromPushKit: fromPushKit payload:payload withCompletionHandler:nil];
 }
