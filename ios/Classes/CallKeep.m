@@ -299,9 +299,8 @@ static CXProvider* sharedProvider;
                  handleType:(NSString *)handleType
                    hasVideo:(BOOL)hasVideo
         localizedCallerName:(NSString * _Nullable)localizedCallerName
-                    payload:(NSDictionary *)payload
 {
-    [CallKeep reportNewIncomingCall: uuidString handle:handle handleType:handleType hasVideo:hasVideo localizedCallerName:localizedCallerName fromPushKit: NO payload:payload withCompletionHandler:nil];
+    [CallKeep reportNewIncomingCall: uuidString handle:handle handleType:handleType hasVideo:hasVideo localizedCallerName:localizedCallerName fromPushKit: NO payload:nil withCompletionHandler:nil];
 }
 
 -(void) startCall:(NSString *)uuidString
