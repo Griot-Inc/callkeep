@@ -41,7 +41,7 @@ class CallKeepDidDisplayIncomingCall extends EventType {
         localizedCallerName = arguments['localizedCallerName'] as String,
         hasVideo = arguments['hasVideo'] as bool,
         fromPushKit = arguments['fromPushKit'] as bool,
-        payload = arguments['payload'] as Map<String, dynamic>;
+        payload =  Map<String, dynamic?>.from(arguments['payload']);
   String? callUUID;
   String? handle;
   String? localizedCallerName;
