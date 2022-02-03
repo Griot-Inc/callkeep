@@ -244,7 +244,7 @@ static CXProvider* sharedProvider;
         return;
     }
 
-    NSString *uuid = dic[@"uuid"];
+    NSString *uuid = dic[@"call_UUID"];
     NSString *callerId = dic[@"caller_id"];
     NSString *callerName = dic[@"caller_name"];
     BOOL hasVideo = [dic[@"has_video"] boolValue];
